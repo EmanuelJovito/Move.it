@@ -9,6 +9,20 @@ body {
   color: #666
 }
 
+:root {
+  --white: #fff;
+  --background: #f2f3f5;
+  --grat-line: #DCDDE0;
+  --text: #666666;
+  --text-highlight: #b3b9ff;
+  --title: #2e384d;
+  --red: #e83f5b;
+  --green: #4cd62b;
+  --blue: #5965E0 ;
+  --blue-dark: #4953b8 ;
+  --blue-twitter: #2aa9e0
+}
+
 body, input, textarea, button {
   font: 400 16px "Inter", sans-serif;
 }
