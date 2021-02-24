@@ -74,8 +74,16 @@
 }
 
 .countdownButton:disabled {
+  display: flex;
+  align-content: center;
+
   background: var(--white);
   color: var(--text);
   cursor: not-allowed;
+
+  border-bottom: 4px solid var(--green);
 }
 
+.countdownButton:disabled img {
+  margin-left: 1rem;
+}
