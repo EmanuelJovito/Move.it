@@ -47,6 +47,7 @@ export function Countdown() {
             onClick={resetCountdown}
           >
             Abandonar ciclo
+            <img src="icons/close.svg" alt="Sair"/>
           </button>
         ) : (
           <button 
