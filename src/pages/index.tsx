@@ -1,15 +1,10 @@
-import Head from 'next/head' 
 import { GetServerSideProps } from 'next'
+import { useEffect } from 'react'
+import Link from 'next/link'
 
-import { CompletedChallenges } from '../components/CompletedChallenges'
-import { Countdown } from '../components/Countdown'
-import { ExperienceBar } from '../components/ExperienceBar'
-import { Profile } from '../components/Profile'
-import { ChallengeBox } from '../components/ChallengeBox'
+import firebase from '../../firebase'
 
-import styles from '../styles/pages/Home.module.css'
-import { CountdownProvider } from '../contexts/CountdownContext'
-import { ChallengesProvider } from '../contexts/ChallengeContext'
+import styles from '../styles/pages/Index.module.css'
 
 interface HomeProps {
   level: number;
@@ -17,34 +12,41 @@ interface HomeProps {
   challengesCompleted: number;
 }
 
-export default function Home(props: HomeProps) {
+export default function Home(props: HomeProps) { 
+  useEffect(() => {
+    firebase.firestore().collection('users').get().then(snapshot => {
+      snapshot.forEach(doc => console.log(doc.data()))
+    })
+  }, [])
+
   return (
-    <ChallengesProvider 
-      level={props.level}
-      currentExperience={props.currentExperience} 
-      challengesCompleted={props.challengesCompleted}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>Início | move.it</title>
-        </Head>
+    <div className={styles.Container}>
+      <img src="background.svg" alt="Background image"/>
 
-        <ExperienceBar />
+      <div className={styles.rightContainer}>
 
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
+        <img src="icons/logo.svg" alt="Logo moveit"/>
+
+        <div className={styles.loginContainer}>
+          <header className={styles.loginHeader}>
+            <h1>Bem-vindo</h1>
+            <div className={styles.loginGithub}>
+              <img src="icons/github.svg" alt="Github logo"/>
+              <p>Faça login com seu Github para começar</p>
             </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+          </header>
+
+          <main className={styles.loginMain}>
+            <input type="text"/>
+            <Link href='/home'>
+              <button type='button'>
+                <img src="icons/login-arrow.svg" alt="Login"/>
+              </button>
+            </Link>
+          </main>
+        </div>
       </div>
-    </ChallengesProvider>
+    </div>
   )
 }
 
