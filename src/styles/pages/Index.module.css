@@ -93,6 +93,8 @@
   width: 20rem;
   height: 4rem;
   
+  color: var(--white);
+
   padding: 1rem ;
 
   background: transparent;

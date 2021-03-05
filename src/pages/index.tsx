@@ -1,11 +1,9 @@
 import { GetServerSideProps } from 'next'
-import { useEffect } from 'react'
 import Link from 'next/link'
-
-import firebase from '../../firebase'
 
 import styles from '../styles/pages/Index.module.css'
 
+import axios from 'axios'
 interface HomeProps {
   level: number;
   currentExperience: number;
@@ -13,11 +11,6 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) { 
-  useEffect(() => {
-    firebase.firestore().collection('users').get().then(snapshot => {
-      snapshot.forEach(doc => console.log(doc.data()))
-    })
-  }, [])
 
   return (
     <div className={styles.Container}>
@@ -39,7 +32,7 @@ export default function Home(props: HomeProps) {
           <main className={styles.loginMain}>
             <input type="text"/>
             <Link href='/home'>
-              <button type='button'>
+              <button type='button' >
                 <img src="icons/login-arrow.svg" alt="Login"/>
               </button>
             </Link>
