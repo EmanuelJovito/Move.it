@@ -1,22 +1,37 @@
 import { GetServerSideProps } from 'next'
+import { signIn, signOut, useSession } from 'next-auth/client'
+import Head from 'next/head'
 import Link from 'next/link'
 
 import styles from '../styles/pages/Index.module.css'
 
-import axios from 'axios'
 interface HomeProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
 }
 
-export default function Home(props: HomeProps) { 
+export default function Home(props: HomeProps) {
+  const [ session, loading ] = useSession()
 
   return (
+    <>
+      <Head>
+            <title>Login | move.it</title>
+      </Head>
     <div className={styles.Container}>
       <img src="background.svg" alt="Background image"/>
 
       <div className={styles.rightContainer}>
+
+      {!session && <>
+        Not signed in <br/>
+        <button onClick={() => signIn('auth0')}>Sign in</button>
+      </>}
+      {session && <>
+        Signed in as {session.user.email} <br/>
+        <button onClick={() => signOut()}>Sign out</button>
+      </>}
 
         <img src="icons/logo.svg" alt="Logo moveit"/>
 
@@ -40,6 +55,7 @@ export default function Home(props: HomeProps) {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
