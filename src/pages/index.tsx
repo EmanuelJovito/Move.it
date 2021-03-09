@@ -1,7 +1,6 @@
 import { GetServerSideProps } from 'next'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Head from 'next/head'
-import Link from 'next/link'
 
 import styles from '../styles/pages/Index.module.css'
 
@@ -37,20 +36,13 @@ export default function Home(props: HomeProps) {
           </header>
 
           <main className={styles.loginMain}>
-            <input type="text"/>
-            <Link href='/home'>
-              <button type='button' >
-                {!session && <>
-                  Not signed in <br/>
-                  <button onClick={() => signIn('auth0')}>Sign in</button>
-                </>}
-                {session && <>
-                  Signed in as {session.user.email} <br/>
-                  <button onClick={() => signOut()}>Sign out</button>
-                </>}
-                <img src="icons/login-arrow.svg" alt="Login"/>
-              </button>
-            </Link>
+                {!session && <div className={styles.SignIn}>
+                  <button onClick={() => signIn('auth0')}>Entrar</button>
+                </div>}
+                {session && <div className={styles.SignOut}>
+                  {/* Você está conectado como: {session.user.email} <br/> */}
+                  {<button onClick={() => signOut()}>Sair</button>}
+                </div>}
           </main>
         </div>
       </div>

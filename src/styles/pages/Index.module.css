@@ -77,8 +77,15 @@
   margin-right: 1rem;
 }
 
-.loginMain {
+.loginMain button {
+  width: 20rem;
+  height: 4rem;
+
+  color: var(--white);
+
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   box-sizing: border-box;
 
@@ -87,43 +94,28 @@
   animation: gradient 15s ease infinite;
 
   border-radius: 5px;
-}
-
-.loginMain input {
-  width: 20rem;
-  height: 4rem;
-  
-  color: var(--white);
-
-  padding: 1rem ;
-
-  background: transparent;
-
-  border: none;
-}
-
-.loginMain button {
-  width: 4rem;  
-
-  background-color: transparent;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   border: none;
 
   transition: all 0.3s ease;
+}
 
-  outline: none;
+.SignOut {
+  display: flex;
+  align-items: center;
+
+  margin-left: 1rem;
+
+  color: var(--white);
 }
 
 .loginMain button:hover {
   border: 1px solid #ffffffb3;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .loginMain button img {
   width: 2rem;
   margin-top: 0;
 }
+
