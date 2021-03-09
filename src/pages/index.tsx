@@ -24,14 +24,6 @@ export default function Home(props: HomeProps) {
 
       <div className={styles.rightContainer}>
 
-      {!session && <>
-        Not signed in <br/>
-        <button onClick={() => signIn('auth0')}>Sign in</button>
-      </>}
-      {session && <>
-        Signed in as {session.user.email} <br/>
-        <button onClick={() => signOut()}>Sign out</button>
-      </>}
 
         <img src="icons/logo.svg" alt="Logo moveit"/>
 
@@ -48,6 +40,14 @@ export default function Home(props: HomeProps) {
             <input type="text"/>
             <Link href='/home'>
               <button type='button' >
+                {!session && <>
+                  Not signed in <br/>
+                  <button onClick={() => signIn('auth0')}>Sign in</button>
+                </>}
+                {session && <>
+                  Signed in as {session.user.email} <br/>
+                  <button onClick={() => signOut()}>Sign out</button>
+                </>}
                 <img src="icons/login-arrow.svg" alt="Login"/>
               </button>
             </Link>
