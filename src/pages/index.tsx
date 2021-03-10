@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next'
+import { useRouter } from 'next/router'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import Head from 'next/head'
 
@@ -11,7 +12,12 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  const router = useRouter()
   const [ session, loading ] = useSession()
+  function login() {
+    router.push('/home'),
+    () => signIn('auth0')
+  }
 
   return (
     <>
@@ -37,7 +43,9 @@ export default function Home(props: HomeProps) {
 
           <main className={styles.loginMain}>
                 {!session && <div className={styles.SignIn}>
-                  <button onClick={() => signIn('auth0')}>Entrar</button>
+                  <a href='/home' >
+                  <button onClick={() => login()}>Entrar</button>
+                  </a>
                 </div>}
                 {session && <div className={styles.SignOut}>
                   {/* Você está conectado como: {session.user.email} <br/> */}

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { session, useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client'
 
 import { ChallengeContext } from '../contexts/ChallengeContext'
 import styles from '../styles/components/Profile.module.css'
@@ -10,9 +10,9 @@ export function Profile() {
 
   return (
     <div className={styles.profileContainer}>
-      <img src={session.user.image} alt="Emanuel Jovito"/>
+      <img src='' alt="Emanuel Jovito"/>
       <div>
-        <strong>{session.user.name}</strong>
+        <strong></strong>
         <p>
           <img src="icons/level.svg" alt="Level"/>
           Level {level}
