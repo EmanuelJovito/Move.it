@@ -4,6 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/client'
 import Head from 'next/head'
 
 import styles from '../styles/pages/Index.module.css'
+import { useEffect } from 'react'
 
 interface HomeProps {
   level: number;
@@ -12,12 +13,15 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  const router = useRouter()
   const [ session, loading ] = useSession()
-  function login() {
-    router.push('/home'),
-    () => signIn('auth0')
-  }
+  const router = useRouter()
+  
+  useEffect(
+    () => {
+      if (session) {
+        router.push('/home')
+      }
+    }, [session])
 
   return (
     <>
@@ -42,15 +46,13 @@ export default function Home(props: HomeProps) {
           </header>
 
           <main className={styles.loginMain}>
-                {!session && <div className={styles.SignIn}>
-                  <a href='/home' >
-                  <button onClick={() => login()}>Entrar</button>
-                  </a>
-                </div>}
-                {session && <div className={styles.SignOut}>
-                  {/* Você está conectado como: {session.user.email} <br/> */}
-                  {<button onClick={() => signOut()}>Sair</button>}
-                </div>}
+            {!session && <div className={styles.SignIn}>
+              <button onClick={() => signIn('auth0')}>Entrar</button>
+            </div>}
+            {session && <div className={styles.SignOut}>
+              Você está conectado como: {session.user.email} <br/>
+              {<button onClick={() => signOut()}>Sair</button>}
+            </div>}
           </main>
         </div>
       </div>

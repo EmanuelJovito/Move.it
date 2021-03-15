@@ -10,9 +10,9 @@ export function Profile() {
 
   return (
     <div className={styles.profileContainer}>
-      <img src='' alt="Emanuel Jovito"/>
+      <img src={session && session.user.image} alt={session && session.user.name}/>
       <div>
-        <strong></strong>
+        <strong>{session && session.user.name}</strong>
         <p>
           <img src="icons/level.svg" alt="Level"/>
           Level {level}
