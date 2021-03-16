@@ -28,11 +28,24 @@ export default function Home(props: HomeProps) {
       <Head>
             <title>Login | move.it</title>
       </Head>
+
+    {loading && 
+      (<div className={styles.loadingContainer}>
+        <div className={styles.skChase}>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+        </div>
+      </div>)
+    }
+
     <div className={styles.Container}>
       <img src="background.svg" alt="Background image"/>
 
       <div className={styles.rightContainer}>
-
 
         <img src="icons/logo.svg" alt="Logo moveit"/>
 
@@ -44,6 +57,7 @@ export default function Home(props: HomeProps) {
               <p>Faça login com seu Github para começar</p>
             </div>
           </header>
+
 
           <main className={styles.loginMain}>
             {!session && <div className={styles.SignIn}>
