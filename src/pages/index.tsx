@@ -29,7 +29,7 @@ export default function Home(props: HomeProps) {
             <title>Login | move.it</title>
       </Head>
 
-    {loading && 
+    {session && 
       (<div className={styles.loadingContainer}>
         <div className={styles.skChase}>
           <div className={styles.skChaseDot}></div>
