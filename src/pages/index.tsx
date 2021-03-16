@@ -29,18 +29,6 @@ export default function Home(props: HomeProps) {
             <title>Login | move.it</title>
       </Head>
 
-    {loading && 
-      (<div className={styles.loadingContainer}>
-        <div className={styles.skChase}>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-        </div>
-      </div>)
-    }
 
     <div className={styles.Container}>
       <img src="background.svg" alt="Background image"/>
@@ -63,13 +51,21 @@ export default function Home(props: HomeProps) {
             {!session && <div className={styles.SignIn}>
               <button onClick={() => signIn('auth0')}>Entrar</button>
             </div>}
-            {session && <div className={styles.SignOut}>
-              Você está conectado como: {session.user.email} <br/>
-              {<button onClick={() => signOut()}>Sair</button>}
-            </div>}
           </main>
         </div>
       </div>
+      {loading && 
+        (<div className={styles.loadingContainer}>
+          <div className={styles.skChase}>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+          </div>
+        </div>)
+      }
     </div>
     </>
   )
