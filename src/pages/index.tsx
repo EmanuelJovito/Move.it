@@ -13,7 +13,7 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  const [ session, loading ] = useSession()
+  const [ session ] = useSession()
   const router = useRouter()
   
   useEffect(
@@ -23,50 +23,50 @@ export default function Home(props: HomeProps) {
       }
     }, [session])
 
-    return (
-      <>
+  return (
+    <>
       <Head>
-            <title>Login | move.it</title>
+        <title>Login | move.it</title>
       </Head>
 
-    {session && 
-      (<div className={styles.loadingContainer}>
-        <div className={styles.skChase}>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-          <div className={styles.skChaseDot}></div>
-        </div>
-      </div>)
-    }
+      {session && 
+        (<div className={styles.loadingContainer}>
+          <div className={styles.skChase}>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+            <div className={styles.skChaseDot}></div>
+          </div>
+        </div>)
+      }
 
-    <div className={styles.Container}>
-      <img src="background.svg" alt="Background image"/>
+      <div className={styles.Container}>
+        <img src="background.svg" alt="Background image"/>
 
-      <div className={styles.rightContainer}>
+        <div className={styles.rightContainer}>
 
-        <img src="icons/logo.svg" alt="Logo moveit"/>
+          <img src="icons/logo.svg" alt="Logo moveit"/>
 
-        <div className={styles.loginContainer}>
-          <header className={styles.loginHeader}>
-            <h1>Bem-vindo</h1>
-            <div className={styles.loginGithub}>
-              <img src="icons/github.svg" alt="Github logo"/>
-              <p>Faça login com seu Github para começar</p>
-            </div>
-          </header>
+          <div className={styles.loginContainer}>
+            <header className={styles.loginHeader}>
+              <h1>Bem-vindo</h1>
+              <div className={styles.loginGithub}>
+                <img src="icons/github.svg" alt="Github logo"/>
+                <p>Faça login com seu Github para começar</p>
+              </div>
+            </header>
 
 
-          <main className={styles.loginMain}>
-            {!session && <div className={styles.SignIn}>
-              <button onClick={() => signIn('auth0')}>Entrar</button>
-            </div>}
-          </main>
+            <main className={styles.loginMain}>
+              {!session && <div className={styles.SignIn}>
+                <button onClick={() => signIn('auth0')}>Entrar</button>
+              </div>}
+            </main>
+          </div>
         </div>
       </div>
-    </div>
     </>
   )
 }
