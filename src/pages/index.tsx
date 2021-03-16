@@ -23,12 +23,24 @@ export default function Home(props: HomeProps) {
       }
     }, [session])
 
-  return (
-    <>
+    return (
+      <>
       <Head>
             <title>Login | move.it</title>
       </Head>
 
+    {loading && 
+      (<div className={styles.loadingContainer}>
+        <div className={styles.skChase}>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+          <div className={styles.skChaseDot}></div>
+        </div>
+      </div>)
+    }
 
     <div className={styles.Container}>
       <img src="background.svg" alt="Background image"/>
@@ -54,18 +66,6 @@ export default function Home(props: HomeProps) {
           </main>
         </div>
       </div>
-      {loading && 
-        (<div className={styles.loadingContainer}>
-          <div className={styles.skChase}>
-            <div className={styles.skChaseDot}></div>
-            <div className={styles.skChaseDot}></div>
-            <div className={styles.skChaseDot}></div>
-            <div className={styles.skChaseDot}></div>
-            <div className={styles.skChaseDot}></div>
-            <div className={styles.skChaseDot}></div>
-          </div>
-        </div>)
-      }
     </div>
     </>
   )
