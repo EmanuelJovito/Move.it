@@ -184,3 +184,60 @@
     transform: scale(1.0); 
   } 
 }
+
+@media (max-width: 800px) {
+  .Container {
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Container > img {
+    display: none;
+  }
+
+  .rightContainer {
+    margin: 0;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginContainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginHeader {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .loginHeader h1 {
+    font-size: 3rem;
+    line-height: 30px;
+  }
+
+  .loginGithub {
+    width: 70%;
+
+    margin-top: 3rem;
+
+    align-items: center;
+  }
+
+  .loginGithub p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 22px;
+    text-align: center;
+  }
+}
