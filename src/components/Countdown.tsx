@@ -17,7 +17,7 @@ export function Countdown() {
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.countdownContainer}>
         <div>
           <span>{minuteLeft}</span>
