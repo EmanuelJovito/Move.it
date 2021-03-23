@@ -11,7 +11,7 @@ import styles from '../styles/pages/Home.module.css'
 import { CountdownProvider } from '../contexts/CountdownContext'
 import { ChallengesProvider } from '../contexts/ChallengeContext'
 import { SideBar } from '../components/SideBar'
-import { HeaderMobile } from '../components/HeaderMobile'
+import { HeaderBarMobile } from '../components/HeaderBarMobile'
 
 interface HomeProps {
   level: number;
@@ -26,14 +26,12 @@ export default function Home(props: HomeProps) {
     currentExperience={props.currentExperience} 
     challengesCompleted={props.challengesCompleted}
     >
-      {/* <SideBar /> */}
+      <HeaderBarMobile />
       
       <div className={styles.container}>
         <Head>
           <title>Início | move.it</title>
         </Head>
-
-        <HeaderMobile />
 
         <ExperienceBar />
 

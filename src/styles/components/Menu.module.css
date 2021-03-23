@@ -1,0 +1,44 @@
+.Menu {
+  width: 30px;
+  height: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.MenuActive {
+  width: 30px;
+  height: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.MenuActive div:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+.MenuActive div:nth-child(2) {
+  width: 100%;
+  transform: rotate(45deg);
+}
+
+.spanMenuActive:nth-child(2) {
+  width: 80%;
+}
+
+.spanMenuActive {
+  width: 100%;
+  height: 3px;
+  
+  display: block;
+  background: var(--text);
+
+  transform-origin: 19.5px;
+
+  transition: transform 0.2s ;
+}
+

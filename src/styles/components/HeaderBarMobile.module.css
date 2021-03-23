@@ -1,0 +1,23 @@
+.HeaderBarMobile {
+  display: none;
+
+  height: 4rem;
+  width: 100%;
+
+  padding: 0 1rem;
+
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--white);
+}
+
+.HeaderBarMobile img {
+  width: 8rem;
+}
+
+@media (max-width: 695px) {
+  .HeaderBarMobile {
+    display: flex;
+  }
+}
