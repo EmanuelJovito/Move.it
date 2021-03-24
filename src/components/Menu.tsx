@@ -3,10 +3,15 @@ import styles from '../styles/components/Menu.module.css'
 
 export function Menu() {
   const menuRef = useRef<HTMLDivElement>(null)
-
+  
   function handleToggleMenu() {
-    menuRef.current.classList.add(styles.MenuActive)
-    // menuRef.current.classList.remove(styles.MenuActive)
+    const list = menuRef.current.classList.value.split(' ')
+
+    if (list.includes(styles.MenuActive)) {
+      menuRef.current.classList.remove(styles.MenuActive)
+    } else {
+      menuRef.current.classList.add(styles.MenuActive)
+    }
   }
 
   return (
