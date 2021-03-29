@@ -16,7 +16,7 @@ export function Profile (props: ProfileProps) {
     <div className={props.className}>
       <div className={styles.profileContainer}>
         <img src={session && session.user.image} alt={session && session.user.name}/>
-        <div>
+        <div className={styles.levelContainer}>
           <strong>{session && session.user.name}</strong>
           <p>
             <img src="icons/level.svg" alt="Level"/>

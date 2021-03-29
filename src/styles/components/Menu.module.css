@@ -19,3 +19,8 @@
 .MenuActive {
   transform: translateX(0);
 }
+
+.MenuContent {
+  width: 80%;
+  height: 100%;
+}
