@@ -1,4 +1,4 @@
-.Menu {
+.Burguer {
   width: 30px;
   height: 10px;
 
@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: flex-end;
 }
-.MenuActive {
+.BurguerActive {
   width: 30px;
   height: 10px;
 
@@ -17,20 +17,20 @@
   align-items: flex-end;
 }
 
-.MenuActive div:nth-child(1) {
+.BurguerActive div:nth-child(1) {
   transform: rotate(-45deg);
 }
 
-.MenuActive div:nth-child(2) {
+.BurguerActive div:nth-child(2) {
   width: 100%;
   transform: rotate(45deg);
 }
 
-.spanMenuActive:nth-child(2) {
+.spanBurguerActive:nth-child(2) {
   width: 80%;
 }
 
-.spanMenuActive {
+.spanBurguerActive {
   width: 100%;
   height: 3px;
   
@@ -40,8 +40,4 @@
   transform-origin: 19.5px;
 
   transition: transform 0.2s ;
-}
-
-.MenuBar {
-  background: red;
 }

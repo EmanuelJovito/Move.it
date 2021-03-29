@@ -17,9 +17,3 @@
 .completedChallengesContainer span:last-child {
   font-size: 1.5rem;
 }
-
-@media (max-width: 695px) {
-  .completedChallengesContainer {
-    display: none;
-  }
-}

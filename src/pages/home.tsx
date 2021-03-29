@@ -38,8 +38,8 @@ export default function Home(props: HomeProps) {
         <CountdownProvider>
           <section>
             <div className={styles.leftContainer}>
-              <Profile />
-              <CompletedChallenges />
+              <Profile className={styles.homeProfile}/>
+              <CompletedChallenges className={styles.homeChallenges}/>
               <Countdown />
             </div>
             <div className={styles.rightContainer}>

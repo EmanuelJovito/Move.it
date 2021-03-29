@@ -34,4 +34,8 @@ span.currentExperience {
   span.currentExperience {
     display: none;
   }
+
+  .experienceBar > div {
+    position: static;
+  }
 }

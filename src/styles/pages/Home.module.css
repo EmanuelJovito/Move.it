@@ -28,4 +28,12 @@
 
     gap: 1.5rem;
   }
+
+  .homeProfile {
+    display: none;
+  }
+
+  .homeChallenges {
+    display: none;
+  }
 }

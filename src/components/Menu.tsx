@@ -1,11 +1,19 @@
+import { forwardRef, ForwardRefRenderFunction, useRef } from 'react'
 import styles from '../styles/components/Menu.module.css'
+import { CompletedChallenges } from './CompletedChallenges'
+import { Profile } from './Profile'
 
-export function Menu() {
+const Menu: ForwardRefRenderFunction<HTMLDivElement> = ({}, menuRef) => {
   return (
-    <div className={styles.Menu}>
-      <div className={styles.MenuBarActive}>
-
+    <>
+      <div ref={menuRef} className={styles.Menu}>
+        <div className={styles.MenuContent}>
+          <Profile className={styles.prrofileMneu}/>
+          <CompletedChallenges className={styles.challengesMenu}/>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
+
+export default forwardRef(Menu)

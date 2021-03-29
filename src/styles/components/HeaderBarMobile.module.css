@@ -16,6 +16,11 @@
   width: 8rem;
 }
 
+.HeaderActive {
+  position: sticky;
+  top: 0;
+}
+
 @media (max-width: 695px) {
   .HeaderBarMobile {
     display: flex;
