@@ -10,6 +10,8 @@
   align-items: center;
 
   background: var(--white);
+
+  border-bottom: 1px solid var(--gray-line);
 }
 
 .HeaderBarMobile img {

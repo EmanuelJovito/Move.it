@@ -10,7 +10,6 @@ const Menu: ForwardRefRenderFunction<HTMLDivElement> = ({}, menuRef) => {
       <div ref={menuRef} className={styles.Menu}>
         <div className={styles.MenuContent}>
           <ProfileMobile />
-          <CompletedChallenges className={styles.challengesMenu}/>
         </div>
       </div>
     </>
