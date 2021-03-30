@@ -1,11 +1,20 @@
 import { signOut, useSession } from 'next-auth/client'
-import { useContext } from 'react'
+import { useRouter } from 'next/router'
+import { useContext, useEffect } from 'react'
 import { ChallengeContext } from '../contexts/ChallengeContext'
 import styles from '../styles/components/ProfileMobile.module.css'
 
 export function ProfileMobile() {
   const { level, challengesCompleted } = useContext(ChallengeContext)
   const [ session ] = useSession()
+  const router = useRouter()
+
+  useEffect(
+    () => {
+      if (!session) {
+        router.push('/')
+      }
+    }, [session])
 
   return (
     <div className={styles.profileContainer}>
