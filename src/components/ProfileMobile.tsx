@@ -23,7 +23,6 @@ export function ProfileMobile() {
           <button onClick={() => signOut()}>Sair</button>
         </div>
       }
-      
     </div>
   )
 }
