@@ -9,7 +9,7 @@ export function ProfileMobile() {
 
   return (
     <div className={styles.profileContainer}>
-      {/* <div className={styles.userContainer}>
+      <div className={styles.userContainer}>
         <img src={session && session.user.image} alt={session && session.user.name}/>
         <strong>{session && session.user.name}</strong>
       </div>
@@ -20,9 +20,9 @@ export function ProfileMobile() {
 
       {session && 
         <div className={styles.SignOut}>
-          <button onClick={() => signOut()}>Sair</button>
+          {/* <button onClick={() => signOut()}>Sair</button> */}
         </div>
-      } */}
+      }
     </div>
   )
 }
