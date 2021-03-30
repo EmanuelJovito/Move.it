@@ -8,15 +8,15 @@ export function ProfileMobile() {
   const [ session, loading ] = useSession()
 
   return (
-      <div className={styles.profileContainer}>
-        <img src={session && session.user.image} alt={session && session.user.name}/>
-        <div className={styles.levelContainer}>
-          <strong>{session && session.user.name}</strong>
-          <p>
-            <img src="icons/level.svg" alt="Level"/>
-            Level {level}
-          </p>
-        </div>
+    <div className={styles.profileContainer}>
+      <img src={'https://avatars.githubusercontent.com/u/74077807?v=4'} alt={session && session.user.name}/>
+      <div className={styles.levelContainer}>
+        <strong>{session && session.user.name}Emanuel Jovito</strong>
+        <p>
+          <img src="icons/level.svg" alt="Level"/>
+          Level {level}
+        </p>
       </div>
+    </div>
   )
 }
