@@ -20,7 +20,7 @@ export function ProfileMobile() {
 
       {session && 
         <div className={styles.SignOut}>
-          {/* <button onClick={() => signOut()}>Sair</button> */}
+          <button onClick={() => signOut()}>Sair</button>
         </div>
       }
     </div>

@@ -15,7 +15,7 @@ export function Profile (props: ProfileProps) {
   return (
     <div className={props.className}>
       <div className={styles.profileContainer}>
-        <img src={session && session.user.image} alt={session && session.usesr.name}/>
+        <img src={session && session.user.image} alt={session && session.user.name}/>
         <div className={styles.levelContainer}>
           <strong>{session && session.user.name}</strong>
           <p>
